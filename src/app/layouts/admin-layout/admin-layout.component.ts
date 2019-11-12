@@ -10,8 +10,8 @@ export class AdminLayoutComponent implements OnInit {
 
   constructor() {}
   changeSidebarColor(color){
-    var sidebar = document.getElementsByClassName('sidebar')[0];
-    var mainPanel = document.getElementsByClassName('main-panel')[0];
+    const sidebar = document.getElementsByClassName('sidebar')[0];
+    const mainPanel = document.getElementsByClassName('main-panel')[0];
 
     this.sidebarColor = color;
 
@@ -23,7 +23,7 @@ export class AdminLayoutComponent implements OnInit {
     }
   }
   changeDashboardColor(color){
-    var body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName('body')[0];
     if (body && color === 'white-content') {
         body.classList.add(color);
     }
@@ -31,5 +31,8 @@ export class AdminLayoutComponent implements OnInit {
       body.classList.remove('white-content');
     }
   }
-  ngOnInit() {}
+  ngOnInit() {
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('white-content');
+  }
 }
